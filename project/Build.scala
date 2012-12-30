@@ -9,10 +9,11 @@ object ApplicationBuild extends Build {
 
     val appDependencies = Seq()
 
-    val sub = play.Project(appName + "-sub", appVersion, path=file("modules/sub")).settings()
+    val sub = PlayProject(appName + "-sub", appVersion, path=file("modules/sub"), mainLang = SCALA).settings()
 
-    val main = play.Project(appName, appVersion, appDependencies)
+    val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA)
       .settings()
+      .aggregate(sub)
       .dependsOn(sub)
 
 }

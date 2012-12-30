@@ -3,11 +3,10 @@ logLevel := Level.Warn
 
 // The Typesafe repository 
 resolvers ++= Seq(
-  "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
-  Resolver.file("Local Repository", file("/Users/jim/Development/lib/play/framework/Play20/repository/local"))(Resolver.ivyStylePatterns)
+  "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 )
 
 
 
 // Use the Play sbt plugin for Play projects
-addSbtPlugin("play" % "sbt-plugin" % "2.1-RC1")
+addSbtPlugin("play" % "sbt-plugin" % "2.0.4")
